@@ -5,6 +5,8 @@ public class Blatt {
 	public static void main(String[] args) {
 		String name;
 		int charType;
+		
+		Player p;
 
 		Scanner inp = new Scanner(System.in);
 
@@ -32,20 +34,8 @@ public class Blatt {
 			}
 		} while (charType > 3 || charType < 1);
 
-		System.out.printf("You chose ");
-		switch (charType) {
-		case 1:
-			System.out.printf("Warrior\n");
-			break;
-		case 2:
-			System.out.printf("Wizard\n");
-			break;
-		case 3:
-			System.out.printf("Thief\n");
-			break;
-		default:
-			System.out.printf("Invalid\n");
-		}
-
+		p = new Player(name, charType);
+		
+		System.out.printf("You chose %s\n", p.getCharTypeString());
 	}
 }
